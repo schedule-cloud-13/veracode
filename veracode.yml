@@ -2,10 +2,10 @@ debug: true
 actions:
   veracode_static_scan:
     build:
-      runs_on: windows-latest
+      runs_on: ubuntu-latest
 veracode_static_scan:
   push:
-    trigger: true
+    trigger: false
     branches_to_run:
       - '*'
     branches_to_exclude:
@@ -17,7 +17,7 @@ veracode_static_scan:
       - synchronize
     target_branch:
       - master
-  analysis_on_platform: false
+  analysis_on_platform: true
   break_build_policy_findings: true
   break_build_invalid_policy: false
   break_build_on_error: true
